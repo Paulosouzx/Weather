@@ -65,13 +65,13 @@ function showInfo(json) {
     case json.temp <= 0:
       tempElement.style.backgroundColor = "#0ea5e9";
       break;
-    case json.temp >= 10:
+    case json.temp > 0 && json.temp <= 15:
       tempElement.style.backgroundColor = "#0284c7";
       break;
-    case json.temp >= 20:
+    case json.temp > 15 && json.temp <= 30:
       tempElement.style.backgroundColor = "#fbbf24";
       break;
-    case json.temp >= 30:
+    case json.temp > 30:
       tempElement.style.backgroundColor = "red";
       break;
   }

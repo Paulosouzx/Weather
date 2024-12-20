@@ -227,3 +227,20 @@ body {
     width: 100%;
   }
 }
+
+#movie_section {
+  animation: fadeIn 2s;
+}
+
+.animate {
+  animation: fadeIn 2s;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
