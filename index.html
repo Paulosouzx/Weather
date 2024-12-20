@@ -29,60 +29,68 @@
         </button>
       </form>
 
-      <div id="weather" class="weather">
-        <h1 id="title"></h1>
-
-        <div id="infos">
-          <div id="temp">
-            <img
-              id="temp_img"
-              src="http://openweathermap.org/img/wn/04d@2x.png"
-              alt=""
-            />
-            <div>
-              <p id="temp_value"></p>
-              <p id="temp_description"></p>
-            </div>
-          </div>
-
-          <div id="other_infos">
-            <div class="info">
-              <i id="temp_max_icon" class="fa-solid fa-temperature-high"></i>
+      <div id="content">
+        <div id="weather" class="weather">
+          <h1 id="title"></h1>
+          <div id="infos">
+            <div id="temp">
+              <img
+                id="temp_img"
+                src="http://openweathermap.org/img/wn/04d@2x.png"
+                alt=""
+              />
               <div>
-                <h2>Temp. max</h2>
-                <p id="temp_max"></p>
+                <p id="temp_value"></p>
+                <p id="temp_description"></p>
               </div>
             </div>
 
-            <div class="info">
-              <i id="temp_min_icon" class="fa-solid fa-temperature-low"></i>
-              <div>
-                <h2>Temp. min</h2>
-                <p id="temp_min">12 C°</p>
+            <div id="other_infos">
+              <div class="info">
+                <i id="temp_max_icon" class="fa-solid fa-temperature-high"></i>
+                <div>
+                  <h2>Temp. max</h2>
+                  <p id="temp_max"></p>
+                </div>
               </div>
-            </div>
 
-            <div class="info">
-              <i id="humidity_icon" class="fa-solid fa-droplet"></i>
-              <div>
-                <h2>Humidade</h2>
-                <p id="humidity">50%</p>
+              <div class="info">
+                <i id="temp_min_icon" class="fa-solid fa-temperature-low"></i>
+                <div>
+                  <h2>Temp. min</h2>
+                  <p id="temp_min">12 C°</p>
+                </div>
               </div>
-            </div>
 
-            <div class="info">
-              <i id="wind_icon" class="fa-solid fa-wind"></i>
-              <div>
-                <h2>Vento</h2>
-                <p id="wind">50 km/h</p>
+              <div class="info">
+                <i id="humidity_icon" class="fa-solid fa-droplet"></i>
+                <div>
+                  <h2>Humidade</h2>
+                  <p id="humidity">50%</p>
+                </div>
+              </div>
+
+              <div class="info">
+                <i id="wind_icon" class="fa-solid fa-wind"></i>
+                <div>
+                  <h2>Vento</h2>
+                  <p id="wind">50 km/h</p>
+                </div>
               </div>
             </div>
           </div>
         </div>
-      </div>
 
-      <div id="footer" class="footer">Sugestão para filme:</div>
+        <div id="movie_section">
+          <h2>Sugestão para filme:</h2>
+          <div id="movie_suggestions">
+            <div class="movie-item">O Nevoeiro</div>
+            <div class="movie-item">Silent Hill</div>
+          </div>
+        </div>
+      </div>
     </div>
+
     <script src="src/js/script.js"></script>
   </body>
 </html>

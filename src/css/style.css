@@ -20,6 +20,11 @@ body {
   border-radius: 20px;
   padding: 18px;
   box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.1);
+  max-width: 900px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 20px;
 }
 
 #search {
@@ -27,7 +32,7 @@ body {
   align-items: center;
   gap: 8px;
   border-radius: 10px;
-  padding: 4px 12px;
+  padding: 4px 10px;
 }
 
 #search input {
@@ -40,8 +45,6 @@ body {
 
 #search input:focus-visible {
   outline: none;
-  background-color: f0f8ff;
-  
 }
 
 #search button {
@@ -50,9 +53,21 @@ body {
   cursor: pointer;
 }
 
+#content {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 20px;
+  width: 100%;
+}
+
 #weather {
   display: none;
-  margin-top: 20px;
+  background-color: #fff;
+  border-radius: 20px;
+  padding: 20px;
+  width: 300px;
+  box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
 }
 
 #weather.show {
@@ -61,7 +76,7 @@ body {
 
 #weather #title {
   text-align: center;
-  margin-bottom: 5px;
+  margin-bottom: 10px;
   font-weight: 600;
   color: #372f3f;
 }
@@ -147,14 +162,68 @@ body {
   width: 200px;
   margin-top: 20px;
 }
-.footer {
+
+#movie_section {
+  background-color: #ffffff;
+  border-radius: 10px;
+  box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+  padding: 20px;
+  width: 300px;
   display: none;
-  opacity: 0;
-  transition: opacity 0.5s ease;
 }
 
-.footer.show {
+#movie_section.show {
   display: block;
-  opacity: 1;
-  padding-top: 10px;
+}
+
+#movie_section h2 {
+  font-size: 1.2rem;
+  color: #333;
+  text-align: center;
+  margin-bottom: 10px;
+}
+
+#movie_suggestions {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+  overflow-y: auto;
+  height: calc(100% - 40px);
+}
+
+.movie-item {
+  width: 100%;
+  padding: 10px;
+  background-color: #d1d5db;
+  border-radius: 8px;
+  cursor: pointer;
+  text-align: center;
+  font-weight: bold;
+  color: #333;
+  transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.movie-item:hover {
+  background-color: #b3c2d1;
+  transform: scale(1.05);
+}
+
+.movie-item.placeholder {
+  background-color: #f3f4f6;
+}
+
+@media (max-width: 768px) {
+  #content {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  #movie_section {
+    width: 100%;
+  }
+
+  #weather {
+    width: 100%;
+  }
 }

@@ -25,6 +25,7 @@ document.querySelector("#search").addEventListener("submit", async (event) => {
               Não foi possível localizar...
               <img style="width:60px" src="img/404.png"/>
           `);
+    return;
   }
 
   showInfo({
@@ -36,13 +37,14 @@ document.querySelector("#search").addEventListener("submit", async (event) => {
     description: json.weather[0].description,
     tempIcon: json.weather[0].icon,
     windSpeed: json.wind.speed,
-    humidity: json.main.humidity
+    humidity: json.main.humidity,
   });
+
+  showMovieSuggestions(json.weather[0].description);
 
   document.querySelector("#footer").classList.add("show");
 });
 
-//Esconde o botão de pesquisar quando o input ficar focado
 function toggleHiddenOnFocus() {
   const cityNameInput = document.getElementById("city_name");
   const submitButton = document.getElementById("submit_city");
@@ -56,12 +58,7 @@ function toggleHiddenOnFocus() {
   });
 }
 
-//Codigo que mostra as informações do local enviado
-
 function showInfo(json) {
-  //showAlert("");
-
-  //Mudar cor do background do tempo
   let tempElement = document.getElementById("temp");
 
   switch (true) {
@@ -106,4 +103,38 @@ function showInfo(json) {
   document.getElementById("wind").innerHTML = `${json.windSpeed.toFixed(
     0
   )}km/h`;
+}
+
+function showMovieSuggestions(weatherDescription) {
+  const movieSuggestionsContainer =
+    document.querySelector("#movie_suggestions");
+  movieSuggestionsContainer.innerHTML = "";
+
+  const movieSuggestions = {
+    chuva: ["Cantando na Chuva", "O Segredo das Águas", "Chuva Negra"],
+    "céu limpo": ["Sob o Sol da Toscana", "Mad Max: Estrada da Fúria"],
+    nublado: ["O Nevoeiro", "Silent Hill"],
+    neve: ["Frozen", "O Regresso", "Deixe-me Entrar"],
+  };
+
+  const suggestions = movieSuggestions[
+    Object.keys(movieSuggestions).find((key) =>
+      weatherDescription.toLowerCase().includes(key)
+    )
+  ] || ["Filme não encontrado. Aproveite o clima!"];
+
+  suggestions.forEach((movie) => {
+    const movieItem = document.createElement("div");
+    movieItem.className = "movie-item";
+    movieItem.textContent = movie;
+    movieSuggestionsContainer.appendChild(movieItem);
+
+    movieItem.style.backgroundImage = `url('https://via.placeholder.com/80?text=${movie
+      .charAt(0)
+      .toUpperCase()}')`;
+    movieItem.style.backgroundSize = "cover";
+    movieItem.style.backgroundPosition = "center";
+  });
+
+  document.querySelector("#movie_section").classList.add("show");
 }
