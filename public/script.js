@@ -9,7 +9,7 @@ document.querySelector("#search").addEventListener("submit", async (event) => {
   }
 
   try {
-    const response = await fetch(`/api/weather?city=${cityName}`);
+    const response = await fetch(`/api/?city=${cityName}`);
     const data = await response.json();
 
     if (data.error) {
