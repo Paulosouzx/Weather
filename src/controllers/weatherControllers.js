@@ -17,7 +17,7 @@ const getWeatherAndMovies = async (req, res) => {
 
     // Obter sugestões de filmes
     const movieSuggestions = await movieService.getMovieSuggestions(
-      weatherData.description
+      weatherData.city
     );
 
     res.json({ weather: weatherData, movies: movieSuggestions });

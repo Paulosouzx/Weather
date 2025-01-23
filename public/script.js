@@ -1,10 +1,12 @@
+import axios from "axios";
+
 document.querySelector("#search").addEventListener("submit", async (event) => {
   event.preventDefault();
 
   const cityName = document.querySelector("#city_name").value;
 
   if (!cityName) {
-    showAlert("Você precisa digitar uma cidade...");
+    alert("Você precisa digitar uma cidade...");
     return;
   }
 
@@ -13,7 +15,7 @@ document.querySelector("#search").addEventListener("submit", async (event) => {
     const data = await response.json();
 
     if (data.error) {
-      showAlert(data.error);
+      alert(data.error);
       return;
     }
 
@@ -21,6 +23,6 @@ document.querySelector("#search").addEventListener("submit", async (event) => {
     updateMovieSuggestions(data.movies);
   } catch (error) {
     console.error("Erro na requisição ao servidor", error);
-    showAlert("Erro ao buscar informações do servidor.");
+    alert("Erro ao buscar informações do servidor.");
   }
 });

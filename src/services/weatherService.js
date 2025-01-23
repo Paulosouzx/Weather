@@ -30,7 +30,7 @@ const getWeather = async (cityName) => {
       throw new Error("Cidade não encontrada");
     }
   } catch (error) {
-    throw { status: 400, message: "Não foi possível obter os dados do clima." };
+    throw { status: 400, message: "Não foi possível obter os dados da cidade pretendida." };
   }
 };
 
