@@ -15,7 +15,6 @@
   </head>
   <body>
     <div id="container">
-      <!-- Formulário para buscar a cidade -->
       <form id="search">
         <i class="fa-solid fa-location-dot"></i>
         <input
@@ -29,7 +28,6 @@
         </button>
       </form>
 
-      <!-- Seção de informações do clima -->
       <div id="content">
         <div id="weather" class="weather">
           <h1 id="title"></h1>
@@ -38,7 +36,7 @@
               <img
                 id="temp_img"
                 src="http://openweathermap.org/img/wn/04d@2x.png"
-                alt="Icone do clima"
+                alt=""
               />
               <div>
                 <p id="temp_value"></p>
@@ -59,7 +57,7 @@
                 <i id="temp_min_icon" class="fa-solid fa-temperature-low"></i>
                 <div>
                   <h2>Temp. min</h2>
-                  <p id="temp_min"></p>
+                  <p id="temp_min">12 C°</p>
                 </div>
               </div>
 
@@ -67,7 +65,7 @@
                 <i id="humidity_icon" class="fa-solid fa-droplet"></i>
                 <div>
                   <h2>Humidade</h2>
-                  <p id="humidity"></p>
+                  <p id="humidity">50%</p>
                 </div>
               </div>
 
@@ -75,25 +73,25 @@
                 <i id="wind_icon" class="fa-solid fa-wind"></i>
                 <div>
                   <h2>Vento</h2>
-                  <p id="wind"></p>
+                  <p id="wind">50 km/h</p>
                 </div>
               </div>
             </div>
           </div>
         </div>
 
-        <!-- Seção de sugestões de filmes -->
         <div id="movie_section">
-          <h2>Sugestões de filmes:</h2>
+          <h2>Sugestão para filme:</h2>
           <div id="movie_suggestions">
-            <!-- Os filmes sugeridos serão adicionados aqui dinamicamente -->
+            <div class="movie-item">O Nevoeiro</div>
+            <div class="movie-item">Silent Hill</div>
           </div>
         </div>
       </div>
     </div>
 
-    <!-- Scripts -->
     <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+    <script src="script.js" type="module"></script>
     <script src="../src/data/supabase.js" type="module"></script>
   </body>
 </html>
