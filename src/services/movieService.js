@@ -1,8 +1,8 @@
 import axios from "axios";
 
 // Chave de API e URL base do TMDb
-const apiKeyTMDB = process.env.API_KEY_TMDB; // Sua chave de API
-const apiUrlTMDB = process.env.API_URL_TMDB; // URL base fixa
+const apiKeyTMDB = "1faf5bfaeee634f33cfefcd45fa3fb78"; // Sua chave de API
+const apiUrlTMDB = "https://api.themoviedb.org/3/search/movie"; // URL base fixa
 
 // Função para buscar filmes relacionados à descrição do clima
 async function getMovieSuggestions(weatherDescription) {
@@ -24,19 +24,17 @@ async function getMovieSuggestions(weatherDescription) {
           title: movie.title,
           releaseDate: movie.release_date,
           poster: `https://image.tmdb.org/t/p/w500${movie.poster_path}`,
-          rating: movie.vote_average,
+          rating: movie.vote_average
         }));
 
       return movieDetails;
     } else {
-      return [
-        { title: "Nenhum filme encontrado para esta condição climática." },
-      ];
+      return [{title: "Nenhum filme encontrado para esta condição climática."}];
     }
   } catch (error) {
     console.error("Erro ao buscar filmes da API TMDb:", error.message);
-    return [{ title: "Erro ao buscar filmes. Tente novamente mais tarde." }];
+    return [{title: "Erro ao buscar filmes. Tente novamente mais tarde."}];
   }
 }
 
-export default { getMovieSuggestions };
+export default {getMovieSuggestions};

@@ -24,14 +24,17 @@ const getWeather = async (cityName) => {
         description: data.weather[0].description,
         tempIcon: data.weather[0].icon,
         windSpeed: data.wind.speed,
-        humidity: data.main.humidity,
+        humidity: data.main.humidity
       };
     } else {
       throw new Error("Cidade não encontrada");
     }
   } catch (error) {
-    throw { status: 400, message: "Não foi possível obter os dados da cidade pretendida." };
+    throw {
+      status: 400,
+      message: "Não foi possível obter os dados da cidade pretendida."
+    };
   }
 };
 
-export default { getWeather };
+export default {getWeather, exe};
