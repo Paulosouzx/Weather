@@ -22,7 +22,7 @@ document.querySelector("#search").addEventListener("submit", async (event) => {
       throw new Error("Cidade não encontrada ou erro no servidor.");
     }
 
-    const {weather, movies} = await response.json();
+    const { weather, movies } = await response.json();
 
     showInfo({
       city: weather.name,
@@ -33,7 +33,7 @@ document.querySelector("#search").addEventListener("submit", async (event) => {
       description: weather.weather[0].description,
       tempIcon: weather.weather[0].icon,
       windSpeed: weather.wind.speed,
-      humidity: weather.main.humidity
+      humidity: weather.main.humidity,
     });
 
     showMovieSuggestions(movies);

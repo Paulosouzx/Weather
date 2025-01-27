@@ -15,11 +15,10 @@ const getWeatherAndMovies = async (req, res) => {
     // Obter informações do clima
     const weatherData = await weatherService.getWeather(cityName);
 
-    // Obter sugestões de filmes
-    const movieSuggestions = await movieService.getMovieSuggestions(
-      weatherData.city
-    );
+    // Obter sugestões de filmes baseadas no nome da cidade
+    const movieSuggestions = await movieService.getMovieSuggestions(cityName);
 
+    // Retornar os dados do clima e filmes
     res.json({ weather: weatherData, movies: movieSuggestions });
   } catch (error) {
     res.status(400).json({ error: error.message });
