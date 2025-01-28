@@ -185,33 +185,33 @@ body {
 
 #movie_suggestions {
   display: flex;
-  flex-wrap: wrap; /* Permite que os itens quebrem linha */
-  justify-content: center; /* Centraliza os itens horizontalmente */
-  gap: 30px; /* Espaço entre os itens */
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 30px;
   width: 100%;
-  height: auto; /* Ajusta a altura automaticamente */
-  padding: 10px; /* Adiciona um pouco de espaço interno */
-  overflow: hidden; /* Permite rolagem se o conteúdo ultrapassar a altura */
+  height: auto;
+  padding: 10px;
+  overflow: hidden;
 }
 
 .movie-item {
   display: flex;
-  flex-direction: column; /* Coloca o título abaixo da imagem */
+  flex-direction: column;
   margin-bottom: 5px;
-  align-items: center; /* Centraliza o conteúdo dentro do card */
-  width: 350px; /* Largura fixa para os cards */
-  text-align: center; /* Centraliza o texto */
-  background-color: #ffffff; /* Cor de fundo para destaque */
-  border-radius: 10px; /* Bordas arredondadas */
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Sombra para um efeito elegante */
-  overflow: hidden; /* Garante que o conteúdo não transborde */
+  align-items: center;
+  width: 350px;
+  text-align: center;
+  background-color: #ffffff;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  overflow: hidden;
 }
 
 .movie-item img {
-  width: 100%; /* Garante que a imagem ocupe toda a largura */
-  height: 300px; /* Altura fixa para uniformizar os cards */
-  object-fit: cover; /* Ajusta a imagem para preencher o espaço sem distorção */
-  border-bottom: 1px solid #ddd; /* Linha de separação entre imagem e texto */
+  width: 100%;
+  height: 300px;
+  object-fit: cover;
+  border-bottom: 1px solid #ddd;
 }
 
 .movie-item.placeholder {

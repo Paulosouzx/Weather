@@ -17,12 +17,10 @@ server.use(express.static("public"));
 server.use(express.json());
 server.use(helmet());
 
-// Rota para o arquivo supabase.js
 server.get("/src/data/supabase.js", (req, res) => {
   res.sendFile(path.join(__dirname, "src", "data", "supabase.js"));
 });
 
-// Rota para buscar clima e sugestões de filmes
 server.get("/api/weather", async (req, res) => {
   const { city } = req.query;
   if (!city) {
@@ -30,7 +28,6 @@ server.get("/api/weather", async (req, res) => {
   }
 
   try {
-    // Faz a chamada para a API de clima
     const apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${API_KEY}&units=metric`;
     const response = await fetch(apiUrl);
     const weatherData = await response.json();
@@ -39,7 +36,6 @@ server.get("/api/weather", async (req, res) => {
       return res.status(400).json({ error: "Cidade não encontrada." });
     }
 
-    // Busca filmes com base no nome da cidade
     const movies = await movieService.getMovieSuggestions(city);
 
     res.json({
@@ -52,7 +48,6 @@ server.get("/api/weather", async (req, res) => {
   }
 });
 
-// Inicialização do servidor
 server.listen(PORT, () => {
   console.log(`Server ligado na porta http://localhost:${PORT}`);
 });
