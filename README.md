@@ -30,24 +30,62 @@ This project is a simple application that lets users search for a city's weather
 ```json
 {
 	"weather": {
-		"city": "Porto",
-		"country": "PT",
-		"temp": 11.73,
-		"tempMax": 13.47,
-		"tempMin": 11.73,
-		"description": "céu limpo",
-		"tempIcon": "01n",
-		"windSpeed": 1.54,
-		"humidity": 82
+		"coord": {
+			"lon": -8.4201,
+			"lat": 41.5503
+		},
+		"weather": [
+			{
+				"id": 500,
+				"main": "Rain",
+				"description": "light rain",
+				"icon": "10n"
+			}
+		],
+		"base": "stations",
+		"main": {
+			"temp": 9.56,
+			"feels_like": 9.09,
+			"temp_min": 9.56,
+			"temp_max": 9.56,
+			"pressure": 1027,
+			"humidity": 86,
+			"sea_level": 1027,
+			"grnd_level": 1000
+		},
+		"visibility": 10000,
+		"wind": {
+			"speed": 1.55,
+			"deg": 176,
+			"gust": 1.5
+		},
+		"rain": {
+			"1h": 0.41
+		},
+		"clouds": {
+			"all": 100
+		},
+		"dt": 1738098709,
+		"sys": {
+			"type": 2,
+			"id": 2021760,
+			"country": "PT",
+			"sunrise": 1738050552,
+			"sunset": 1738086233
+		},
+		"timezone": 0,
+		"id": 2742032,
+		"name": "Braga",
+		"cod": 200
 	},
 	"movies": [
 		{
-			"title": "Porto",
-			"releaseDate": "2017-07-27",
-			"poster": "https://image.tmdb.org/t/p/w500/2jsNrAJx3z1uzrw4Jg1XIvOl7Cv.jpg",
-			"rating": 5.7
+			"title": "Girl with the Golden Panties",
+			"releaseDate": "1980-03-28",
+			"poster": "https://image.tmdb.org/t/p/w500/eouh5mMl4XBUMEZZJxNwXXQldZX.jpg",
+			"rating": 4.8
 		}
-    ]
+	]
 }
 ```
 
