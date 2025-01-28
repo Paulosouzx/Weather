@@ -16,13 +16,13 @@ This project is a simple application that lets users search for a city's weather
 
 
 - **FRONT-END**
-- [![My Skills](https://skillicons.dev/icons?i=html,css,javascript)](https://skillicons.dev)
+  [![My Skills](https://skillicons.dev/icons?i=html,css,javascript)](https://skillicons.dev)
 
 - **BACK-END**
-- [![My Skills](https://skillicons.dev/icons?i=nodejs,expressjs,supabase)](https://skillicons.dev)
+  [![My Skills](https://skillicons.dev/icons?i=nodejs,expressjs,supabase)](https://skillicons.dev)
 
 - **TOOLS**
-- [![My Skills](https://skillicons.dev/icons?i=postman,docker)](https://skillicons.dev)
+  [![My Skills](https://skillicons.dev/icons?i=postman,docker)](https://skillicons.dev)
 
 
 
