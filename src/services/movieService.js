@@ -17,7 +17,7 @@ async function getMovieSuggestions(weatherDescription) {
         (movie) => movie.poster_path && movie.vote_average
       );
 
-      const randomMovies = shuffleArray(filteredMovies).slice(0);
+      const randomMovies = shuffleArray(filteredMovies).slice(0, 1);
 
       return randomMovies.map((movie) => ({
         title: movie.title,

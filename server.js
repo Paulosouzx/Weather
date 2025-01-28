@@ -10,7 +10,7 @@ const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
 
 const server = express();
-const PORT = 5000;
+const PORT = 3000;
 const API_KEY = "8a60b2de14f7a17c7a11706b2cfcd87c";
 
 server.use(express.static("public"));
